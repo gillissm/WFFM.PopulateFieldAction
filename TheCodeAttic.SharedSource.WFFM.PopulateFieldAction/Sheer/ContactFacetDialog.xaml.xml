@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xamlControls
+  xmlns:x="http://www.sitecore.net/xaml"
+  xmlns:ajax="http://www.sitecore.net/ajax"
+  xmlns:rest="http://www.sitecore.net/rest"
+  xmlns:r="http://www.sitecore.net/renderings"
+  xmlns:xmlcontrol="http://www.sitecore.net/xmlcontrols"
+  xmlns:p="http://schemas.sitecore.net/Visual-Studio-Intellisense"
+  xmlns:asp="http://www.sitecore.net/microsoft/webcontrols"
+  xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:wfm="http://www.sitecore.net/wfm/webcontrols">
+
+  <TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer.ContactFacetDialog x:inherits="TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer.ContactFacetDialog,TheCodeAttic.SharedSource.WFFM.PopulateFieldAction">
+    <x:register assembly="Sitecore.Forms.Core" namespace="Sitecore.Forms.Shell.UI.Controls"/>
+
+    <Script type="text/javascript" runat="server" Src="/sitecore/shell/Applications/Modules/Web Forms for Marketers/script/jquery-2.1.1.js"/>
+    <Script type="text/javascript" runat="server" Src="/sitecore/shell/Applications/Modules/Web Forms for Marketers/script/jquery-ui-1.11.1.js"/>
+    <Script type="text/javascript" runat="server" src="/sitecore/shell/Applications/Modules/Web Forms for Marketers/script/jquery.dynatree-1.2.4.js" />
+    <Script type="text/javascript" runat="server" src="/sitecore/shell/Applications/Modules/Web Forms for Marketers/script/sc.controls.js" />
+
+    <Script type="text/javascript">
+      <asp:Literal id="customscript" runat="server"></asp:Literal>
+    </Script>
+    
+    <Sitecore.Controls.DialogPage Icon="Business/32x32/businessman_edit.png" runat="server">
+
+      <AjaxScriptManager runat="server"/>
+      <ContinuationManager runat="server" />
+      <Stylesheet Src="WFM/skin-vista/ui.dynatree.css" DeviceDependant="true" runat="server" />      
+      
+      <html:HtmlInputHidden ID="MappedFields" runat="server" />
+      <p>Just some text to see what might load.</p>
+      <div id="treeMap"/>
+
+      <div id="mytree"/>
+      
+    </Sitecore.Controls.DialogPage>    
+  </TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer.ContactFacetDialog>
+</xamlControls>
