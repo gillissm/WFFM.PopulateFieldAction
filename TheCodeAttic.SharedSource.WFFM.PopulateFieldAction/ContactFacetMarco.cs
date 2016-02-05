@@ -26,36 +26,8 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
             Assert.ArgumentNotNull((object)parameters, "parameters");
             Assert.ArgumentNotNull((object)value, "value");
 
-            //SocialPropertiesSelectorOptions propertiesSelectorOptions = new SocialPropertiesSelectorOptions()
-            //{
-            //    Title = Translate.Text("Gender"),
-            //    Text = Translate.Text("Select the gender that you want to use for this rule."),
-            //    Icon = "People/32x32/users2.png",
-            //    DataSourceTypeName = typeof(Sitecore.Social.Client.Rules.DataSources.GenderPropertiesDataSource).FullName
-            //};
-
-
-            //if (!string.IsNullOrEmpty(value))
-            //    propertiesSelectorOptions.SelectedPropertyKey = value;
-            //SheerResponse.ShowModalDialog(propertiesSelectorOptions.ToUrlString().ToString(), true);
-
-
-            /////sitecore/shell/~/xaml/Sitecore.Forms.Shell.UI.Dialogs.UpdateContactDetails.xaml.xml
-       
-
-            UrlString str = new UrlString("/sitecore/shell/~/xaml/ContactFacetDialog.aspx?ti=Contact Facet Picker&txt=Select a contact facet property&spk="+value);
-            //str["actionid"] = element.Attribute("id").Value;
-            //str["uniqid"] = element.Attribute("uid").Value;
-            //str["id"] = "{2808379D-9284-4060-AC87-BE2BFADF93C6}";//Form
-            
+            UrlString str = new UrlString("/sitecore/shell/~/xaml/ContactFacetDialog.aspx?ti=Contact Facet Picker&txt=Select a contact facet property&spk="+value);                        
             Sitecore.Web.UI.HtmlControls.ClientCommand cc = SheerResponse.ShowModalDialog(str.ToString(),true);
-
-
-            //https://community.sitecore.net/developers/f/8/t/1201
-
-
-
-
         }
     }
 }
