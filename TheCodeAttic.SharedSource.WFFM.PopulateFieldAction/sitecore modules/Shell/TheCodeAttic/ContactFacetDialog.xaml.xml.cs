@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Web.UI.WebControls;
-using TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Utilities;
 
 using System.Linq;
 using System.Web.UI.HtmlControls;
@@ -20,15 +19,9 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
     //https://briancaos.wordpress.com/2010/11/03/xaml-sheerui-dialog-in-sitecore-6-3-x/
     public class ContactFacetDialog : EditorBase
     {
-        // Define each control that you wish to
-        // programatically alter the contents or
-        // behaviour of
-        //protected Literal Name;
-        //protected Scrollbox Summary;
-        protected TreeView myTreeView;
-        protected HtmlInputHidden MappedFields;
-
         
+        protected TreeView myTreeView;
+        protected HtmlInputHidden MappedFields;               
 
         protected override void OnInit(EventArgs e)
         {
@@ -64,12 +57,11 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
             Assert.ArgumentNotNull(e, "e");
 
             base.OnLoad(e);
-            //if (!Context.ClientPage.IsEvent)            
-            //{
+            
             if (!Page.IsPostBack) { 
                 myTreeView.Nodes.Clear();
 
-                Dictionary<string, IFacet> cf = ContactFacetHelper.FacetFactory.ContactFacets;
+                Dictionary<string, IFacet> cf = ContactFacetsHelper.FacetFactory.ContactFacets;
                 foreach (KeyValuePair<string, IFacet> f in cf)
                 {
                     myTreeView.Nodes.Add(GetTreeNode(f.Key, f.Value, f.Key));
