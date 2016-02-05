@@ -1,7 +1,7 @@
 ﻿using Sitecore.Diagnostics;
 using Sitecore.Globalization;
 using Sitecore.Rules.RuleMacros;
-using Sitecore.Social.Client.Dialogs.SocialPropertiesSelectors;
+//using Sitecore.Social.Client.Dialogs.SocialPropertiesSelectors;
 //using Sitecore.Social.Client.Dialogs.SocialPropertiesSelectors;
 //using Sitecore.Social.Client.Rules.DataSources;
 using Sitecore.Text;
@@ -42,21 +42,24 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
 
             /////sitecore/shell/~/xaml/Sitecore.Forms.Shell.UI.Dialogs.UpdateContactDetails.xaml.xml
 
-            //ContactFacetSelectorOptions selectorOptions = new ContactFacetSelectorOptions()
-            //{
-            //    Title = "Contact Facet Picker",
-            //    Text = "Select the contact facet field to be used in the form.",
-            //    Icon = "People/32x32/users2.png",
-            //    SelectedPropertyKey = !string.IsNullOrWhiteSpace(value) ? value : string.Empty
-            //};
+            ContactFacetSelectorOptions selectorOptions = new ContactFacetSelectorOptions()
+            {
+                Title = "Contact Facet Picker",
+                Text = "Select the contact facet field to be used in the form.",
+                Icon = "People/32x32/users2.png",
+                SelectedPropertyKey = !string.IsNullOrWhiteSpace(value) ? value : string.Empty,
+                
+            };
 
             //SheerResponse.ShowModalDialog(selectorOptions.ToUrlString().ToString(), true);
-            UrlString str = new UrlString("/sitecore/shell/~/xaml/TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer.ContactFacetDialog.aspx");
+            //WORKS UrlString str = new UrlString("/sitecore/shell/~/xaml/TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer.ContactFacetDialog.aspx");
+            UrlString str = new UrlString("/sitecore/shell/~/xaml/ContactFacetDialog.aspx");
             //str["actionid"] = element.Attribute("id").Value;
             //str["uniqid"] = element.Attribute("uid").Value;
             //str["id"] = "{2808379D-9284-4060-AC87-BE2BFADF93C6}";//Form
             
-            SheerResponse.ShowModalDialog(str.ToString(), true);
+            Sitecore.Web.UI.HtmlControls.ClientCommand cc = SheerResponse.ShowModalDialog(str.ToString(),true);
+            var a = "hi";
 
 
             //https://community.sitecore.net/developers/f/8/t/1201

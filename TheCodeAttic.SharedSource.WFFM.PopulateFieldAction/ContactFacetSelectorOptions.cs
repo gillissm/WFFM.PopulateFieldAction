@@ -22,6 +22,7 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
 
         public static ContactFacetSelectorOptions Parse()
         {
+            
             return new ContactFacetSelectorOptions()
             {
                 ButtonText = WebUtil.GetQueryString("bt", "OK"),
@@ -37,7 +38,8 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
         public virtual UrlString ToUrlString()
         {
             UrlString urlString = new UrlString(Context.Site.XmlControlPage);
-            urlString["xmlcontrol"] = "/sitecore/shell/~/xaml/Sitecore.Forms.Shell.UI.Dialogs.UpdateContactDetails.xaml.xml";
+            //urlString["xmlcontrol"] = "/sitecore/shell/~/xaml/Sitecore.Forms.Shell.UI.Dialogs.UpdateContactDetails.xaml.xml";
+            urlString["xmlcontrol"] = "/sitecore/shell/~/xaml/ContactFacetDialog.aspx";
             //urlString["xmlcontrol"] = typeof(ContactFacetSelectorOptions).FullName;
             if (!string.IsNullOrEmpty(this.SelectedPropertyKey))
                 urlString.Add("spk", this.SelectedPropertyKey);
@@ -51,8 +53,8 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
                 urlString.Add("bt", this.ButtonText);
             //if (!string.IsNullOrEmpty(this.DataSourceTypeName))
             //    urlString.Add("ds", this.DataSourceTypeName);
-            //if (!string.IsNullOrEmpty(this.Parameters))
-            //    urlString.Add("pm", this.Parameters);
+            if (!string.IsNullOrEmpty(this.Parameters))
+                urlString.Add("pm", this.Parameters);
             return urlString;
         }
     }
