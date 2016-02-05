@@ -17,18 +17,25 @@
     
     <Sitecore.Controls.DialogPage Icon="People/16x16/clock_run.png" Header="Contact Facet Picker" Text="Select a contact facet member" runat="server" >
         <Stylesheet Src="/sitecore/shell/Applications/Content Manager/Dialogs/Properties/Properties.css" />
-     
+      <Style>
+        .selectednode{
+          background-color: antiquewhite;
+        }
+      </Style>
           <AjaxScriptManager runat="server"/>
           <ContinuationManager runat="server" />
-
-          
-
-          
   
           <table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
             <tr>
               <td height="100%">
-                <asp:TreeView id="myTreeView" runat="server" MaxDataBindDepth="10" NodeIndent="5" Enabled="true" ShowCheckBoxes="All" ShowLines="true"  />
+                <asp:TreeView ID="myTreeView" runat="server" 
+                              MaxDataBindDepth="10" 
+                              NodeIndent="10" 
+                              Enabled="true" 
+                              ExpandDepth="0" 
+                              ShowCheckBoxes="None" 
+                              ShowLines="true" 
+                              SelectedNodeStyle-CssClass="selectednode" />
               </td>
             </tr>
           </table>

@@ -43,7 +43,7 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
             /////sitecore/shell/~/xaml/Sitecore.Forms.Shell.UI.Dialogs.UpdateContactDetails.xaml.xml
        
 
-            UrlString str = new UrlString("/sitecore/shell/~/xaml/ContactFacetDialog.aspx");
+            UrlString str = new UrlString("/sitecore/shell/~/xaml/ContactFacetDialog.aspx?ti=Contact Facet Picker&txt=Select a contact facet property&spk="+value);
             //str["actionid"] = element.Attribute("id").Value;
             //str["uniqid"] = element.Attribute("uid").Value;
             //str["id"] = "{2808379D-9284-4060-AC87-BE2BFADF93C6}";//Form

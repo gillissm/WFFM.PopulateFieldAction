@@ -25,7 +25,7 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
 
         protected override void OnInit(EventArgs e)
         {
-            this.MappedFields.Value = this.GetValueByKey("spk");
+            this.MappedFields.Value = WebUtil.GetQueryString("spk");
             base.OnInit(e);
         }
         protected override void SaveValues()
@@ -66,13 +66,15 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
                 {
                     myTreeView.Nodes.Add(GetTreeNode(f.Key, f.Value, f.Key));
                 }
+                
                 myTreeView.DataBind();
     
             }
-            //else
-            //{
-            //    MappedFields.Value = myTreeView.SelectedValue;
-            //}
+            else if(!string.IsNullOrWhiteSpace(myTreeView.SelectedValue))
+            {
+                //MappedFields.Value = myTreeView.SelectedValue;
+                OK_Click();
+            }
         }
 
         /// <summary>
@@ -98,7 +100,10 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
                 {                    
                     if (modelMember is IModelAttributeMember && !string.Equals(modelMember.Name, "Preferred", StringComparison.OrdinalIgnoreCase))
                     {
-                         tn.ChildNodes.Add(new TreeNode(modelMember.Name,string.Format("{0}/{1}", path,modelMember.Name)));                        
+                        var newItemPath = string.Format("{0}/{1}", path, modelMember.Name);
+                        var newNode = new TreeNode(modelMember.Name, newItemPath);
+                        newNode.Selected = newItemPath.ToLowerInvariant() == this.MappedFields.Value.ToLowerInvariant();
+                        tn.ChildNodes.Add(newNode);
                     }
                     else if (modelMember is IModelElementMember)
                     {
