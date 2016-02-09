@@ -19,15 +19,15 @@ TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.GetContactFacetValue, TheCode
 ----version----
 language: en
 version: 1
-revision: 8c20860b-2a09-4db5-9d2c-bc072fc98fbb
+revision: 13a1780c-281d-4fda-b8b3-493bff433716
 
 ----field----
 field: {EEB36A3B-40D9-4AF5-862A-DE257B84DCA3}
 name: Text
 key: text
-content-length: 120
+content-length: 71
 
-Read from [Name,ContactFacet,,contact facet field (First Name - Last Name - Email -  City - Phone)] to populate the form
+Read from [Name,ContactFacet,,contact facet field] to populate the form
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-8c20860b-2a09-4db5-9d2c-bc072fc98fbb
+13a1780c-281d-4fda-b8b3-493bff433716
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160118T180412Z
+20160209T194347Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

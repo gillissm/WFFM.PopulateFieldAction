@@ -1,0 +1,110 @@
+----item----
+version: 1
+id: {FCB225C8-DCB3-4753-B95F-A0F03F89DA8D}
+database: master
+path: /sitecore/content/Webforms/CoffeeForLifeEntry/First Name
+parent: {2808379D-9284-4060-AC87-BE2BFADF93C6}
+name: First Name
+master: {00000000-0000-0000-0000-000000000000}
+template: {C9E1BF85-800A-4247-A3A3-C3F5DFBFD6AA}
+templatekey: Field
+
+----field----
+field: {35C76A0B-B630-458C-AECC-1D62C50D24FC}
+name: Field Link
+key: field link
+content-length: 38
+
+{6353E864-D3AE-4FF9-88DD-60B0F779A44A}
+----field----
+field: {ACD3122B-F975-433E-9802-35BC5F8FE2B4}
+name: Required
+key: required
+content-length: 1
+
+0
+----field----
+field: {E312BDFA-DDBA-4ACC-907A-89A0B59638D4}
+name: Rules
+key: rules
+content-length: 531
+
+<ruleset>
+  <rule uid="{0E2F2670-74C2-4FE6-827C-DDDBF48F2CA7}">
+    <conditions>
+      <condition id="{BF9808C6-4E51-445B-89ED-FEBBC4B3754A}" uid="EE93255C5447470E97EB8F2CA51D4759" ContactFacetMemberPath="Personal/FirstName" />
+    </conditions>
+    <actions>
+      <action id="{1259A763-0340-409E-8A2A-619B4E7ACBC4}" uid="6EE244C593EB4A3ABBEDAB0BDA6F1B6D" />
+      <action id="{FFBF96B4-F825-4B57-A563-946F7B40EFCA}" uid="2743F700266B49BD927CDDDE8EAB6453" Name="Personal/FirstName" />
+    </actions>
+  </rule>
+</ruleset>
+----field----
+field: {358E7AA0-E3E6-4EF6-92DF-EC1301737B50}
+name: Parameters
+key: parameters
+content-length: 21
+
+<CssClass></CssClass>
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 1
+
+0
+----version----
+language: en
+version: 1
+revision: e08fb6dc-b474-477f-b635-a2390dc1f36c
+
+----field----
+field: {821724F3-30BB-4152-A770-88BC43AC175A}
+name: Title
+key: title
+content-length: 10
+
+First Name
+----field----
+field: {26CDC7C2-5307-4591-A7F9-5C034A05630A}
+name: Localized Parameters
+key: localized parameters
+content-length: 27
+
+<Information></Information>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160113T194310Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e08fb6dc-b474-477f-b635-a2390dc1f36c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T212425Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

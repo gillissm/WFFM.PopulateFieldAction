@@ -14,15 +14,7 @@ using System.Reflection;
 namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
 {
     public class GetContactFacetValue<T> : ReadValue<T> where T : ConditionalRuleContext
-    {
-
-        private string _contactFacetElement = string.Empty;
-        public string ContactFacetElement
-        {
-            get { return this._contactFacetElement; }
-            set { this._contactFacetElement = value ?? string.Empty; }
-        }
-
+    {        
         private IContactFacetFactory _contactFacetFactory;
         protected IContactFacetFactory contactFacetFactory {
             get{
@@ -32,7 +24,6 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
                 return _contactFacetFactory;
             }
         }
-
 
         protected string GetFacet(string facetXpath, Contact contact)
         {
@@ -87,57 +78,9 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
             string retValue = string.Empty;
 
 
-            //STEP 4: NEW
+            //STEP 4: Retreival Based on Selected Member
 
             retValue = GetFacet(this.Name, Tracker.Current.Contact);
-
-            //STEP 4: Retreive from current contact's facets            
-            //switch (this.Name.ToLower())
-            //{
-            //    case "first name":
-            //        retValue = Tracker.Current.Contact.GetFacet<IContactPersonalInfo>("Personal").FirstName;
-            //        break;
-            //    case "last name":
-            //        retValue = Tracker.Current.Contact.GetFacet<IContactPersonalInfo>("Personal").Surname;
-            //        break;
-            //    case "email":
-            //        IContactEmailAddresses ea = Tracker.Current.Contact.GetFacet<IContactEmailAddresses>("Emails");
-            //        if (!string.IsNullOrWhiteSpace(ea.Preferred) && ea.Entries.Contains(ea.Preferred))
-            //        {
-            //            retValue = ea.Entries[ea.Preferred].SmtpAddress;
-            //        }
-            //        else if (ea.Entries.Keys.Any())
-            //        {
-            //            retValue = ea.Entries[ea.Entries.Keys.First()].SmtpAddress;
-            //        }
-            //        break;
-            //    case "city":
-            //        IContactAddresses ca = Tracker.Current.Contact.GetFacet<IContactAddresses>("Addresses");
-            //        if (!string.IsNullOrWhiteSpace(ca.Preferred) && ca.Entries.Contains(ca.Preferred))
-            //        {
-            //            retValue = ca.Entries[ca.Preferred].City;
-            //        }
-            //        else if (ca.Entries.Keys.Any())
-            //        {
-            //            retValue = ca.Entries[ca.Entries.Keys.First()].City;
-            //        }
-            //        break;
-            //    case "phone":
-            //        IContactPhoneNumbers pn = Tracker.Current.Contact.GetFacet<IContactPhoneNumbers>("Phone Numbers");
-            //        if (!string.IsNullOrWhiteSpace(pn.Preferred) && pn.Entries.Contains(pn.Preferred))
-            //        {
-            //            retValue = string.Format("{0}-{1}", pn.Entries[pn.Preferred].CountryCode, pn.Entries[pn.Preferred].Number);
-            //        }
-            //        else if (pn.Entries.Keys.Any())
-            //        {
-            //            string firstKey = pn.Entries.Keys.First();
-            //            retValue = string.Format("{0}-{1}", pn.Entries[firstKey].CountryCode, pn.Entries[firstKey].Number);
-            //        }
-            //        break;
-            //    default:
-            //        break;
-            //}
-
             return (object)retValue;
         }
 

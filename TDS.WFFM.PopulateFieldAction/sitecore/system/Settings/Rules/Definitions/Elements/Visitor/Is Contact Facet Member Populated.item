@@ -1,26 +1,33 @@
 ----item----
 version: 1
-id: {964C95B3-FF13-4BBA-99AE-67A487F5DCB0}
+id: {BF9808C6-4E51-445B-89ED-FEBBC4B3754A}
 database: master
-path: /sitecore/system/Settings/Rules/Definitions/Macros/ContactFacet
-parent: {083AE430-1BDD-4F4A-ACF8-ECD12ED63BD2}
-name: ContactFacet
+path: /sitecore/system/Settings/Rules/Definitions/Elements/Visitor/Is Contact Facet Member Populated
+parent: {09D343E1-0874-4125-917B-4B5A67C15B00}
+name: Is Contact Facet Member Populated
 master: {00000000-0000-0000-0000-000000000000}
-template: {40CA4912-1224-4F0B-919F-C4FE11A7A004}
-templatekey: Macro
+template: {F0D16EEE-3A05-4E43-A082-795A32B873C0}
+templatekey: Condition
 
 ----field----
-field: {E90B394E-9C00-48FF-A0CA-4E812E84B05F}
+field: {AB51C8B2-F0E1-4471-9AAE-CC080D774923}
 name: Type
 key: type
 content-length: 119
 
-TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.ContactFacetMarco,TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
+TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.ContactFacetExist,TheCodeAttic.SharedSource.WFFM.PopulateFieldAction
 ----version----
 language: en
 version: 1
-revision: b40245a9-209b-4690-8995-4335d38786f5
+revision: 9eecfaff-dc03-4a16-abbf-0fcc1b320052
 
+----field----
+field: {AF321234-4EB9-4EF5-9197-65903351939C}
+name: Text
+key: text
+content-length: 75
+
+where [ContactFacetMemberPath,ContactFacet,,the contact facet] is populated
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -34,7 +41,7 @@ name: __Created
 key: __created
 content-length: 16
 
-20160118T170627Z
+20160209T210240Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b40245a9-209b-4690-8995-4335d38786f5
+9eecfaff-dc03-4a16-abbf-0fcc1b320052
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20160209T152241Z
+20160209T211556Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

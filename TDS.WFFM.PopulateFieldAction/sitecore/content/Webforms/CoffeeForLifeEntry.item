@@ -1,0 +1,156 @@
+----item----
+version: 1
+id: {2808379D-9284-4060-AC87-BE2BFADF93C6}
+database: master
+path: /sitecore/content/Webforms/CoffeeForLifeEntry
+parent: {10826973-9FB1-4A79-BC05-A1EF38B88B81}
+name: CoffeeForLifeEntry
+master: {00000000-0000-0000-0000-000000000000}
+template: {FFB1DA32-2764-47DB-83B0-95B843546A7E}
+templatekey: Form
+
+----field----
+field: {A42052F7-6C18-424A-A2A1-7A72054CB1A6}
+name: Show Title
+key: show title
+content-length: 1
+
+1
+----field----
+field: {46FB324A-9741-43BD-A0C9-5081A39D40AA}
+name: Show Introduction
+key: show introduction
+content-length: 1
+
+1
+----field----
+field: {FAEACD39-B059-4F46-BEC4-74BA468A97B8}
+name: Show Footer
+key: show footer
+content-length: 1
+
+0
+----field----
+field: {1EB9307A-76BA-4377-B355-E918492BE61F}
+name: Form Type
+key: form type
+content-length: 38
+
+{BE28D311-92DF-4C27-9D57-1A7658640D31}
+----field----
+field: {0F110210-9EA9-47C6-93AF-7DCE616C3602}
+name: Custom Css Class
+key: custom css class
+content-length: 17
+
+MyCustomFormClass
+----field----
+field: {A7F779B9-5FCF-45CC-866B-7C973F5C4FAC}
+name: Save Actions
+key: save actions
+content-length: 892
+
+<?xml version="1.0" encoding="utf-16"?>
+<li xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <g id="{E5EABB1F-40BC-45BB-8D87-3B6C239B521B}" displayName="Actions" onclick="javascript:return scForm.postEvent(this,event,'forms:addaction')">
+    <li id="{D4502A11-9417-4479-9F2A-485F45D2E2D0}" unicid="E8C0F9B5403848F381E7E5C633EC9A21">
+      <parameters>&amp;lt;host&amp;gt;example.host&amp;lt;/host&amp;gt;&amp;lt;from&amp;gt;example@mail.net&amp;lt;/from&amp;gt;&amp;lt;isbodyhtml&amp;gt;true&amp;lt;/isbodyhtml&amp;gt;&amp;lt;to&amp;gt;&amp;lt;/to&amp;gt;&amp;lt;cc&amp;gt;&amp;lt;/cc&amp;gt;&amp;lt;bcc&amp;gt;&amp;lt;/bcc&amp;gt;&amp;lt;localfrom&amp;gt;example@mail.net&amp;lt;/localfrom&amp;gt;&amp;lt;subject&amp;gt;Fake Email&amp;lt;/subject&amp;gt;&amp;lt;mail&amp;gt;&amp;lt;/mail&amp;gt;</parameters>
+    </li>
+  </g>
+</li>
+----field----
+field: {AF08C32B-F101-44A4-BAAE-677383E8EB02}
+name: Check Actions
+key: check actions
+content-length: 367
+
+<?xml version="1.0" encoding="utf-16"?>
+<li xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <g id="{10FE9225-5E6C-4896-9CD2-880D6D48C4CC}" displayName="Check Actions">
+    <li id="{2D5B5061-747A-4477-BD41-E746EAFEB231}" unicid="89F18F7C96F4469A9470057CE421A115">
+      <parameters />
+    </li>
+  </g>
+</li>
+----field----
+field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
+name: __Tracking
+key: __tracking
+content-length: 358
+
+<tracking>
+  <event name="Field Completed" id="{F0113A93-570A-4F69-8C7C-BA08037D1E34}" />
+  <event name="Field Not Completed" id="{7E86B2F5-ACEC-4C60-8922-4EB5AE5D9874}" />
+  <event name="Field Out of Boundary" id="{F3D7B20C-675C-4707-84CC-5E5B4481B0EE}" />
+  <event name="Invalid Field Syntax" id="{844BBD40-91F6-42CE-8823-5EA4D089ECA2}" />
+</tracking>
+----version----
+language: en
+version: 1
+revision: 6778fb95-6528-40e3-b335-684070ac6a8e
+
+----field----
+field: {86D6A401-5A20-49C9-A2F8-0312398EE946}
+name: Title
+key: title
+content-length: 18
+
+Coffee for Life!!!
+----field----
+field: {0F2414BD-A95D-419C-A238-A6637A3FAB76}
+name: Introduction
+key: introduction
+content-length: 109
+
+<p>
+How would you like to receive coffee for life? Enter our monthly contest to see how lucky you are.
+</p>
+----field----
+field: {6739FA82-A9B4-40F1-AEFE-3D67AE3E8DFC}
+name: Title Tag
+key: title tag
+content-length: 2
+
+H1
+----field----
+field: {B71296B6-32B9-4703-A8CB-FB7437271103}
+name: Name
+key: name
+content-length: 13
+
+Enter Contest
+----field----
+field: {9C4C1994-5140-49D3-BAD7-DB997816F816}
+name: Success Page
+key: success page
+content-length: 52
+
+<link id="{00000000-0000-0000-0000-000000000000}" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160113T194112Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6778fb95-6528-40e3-b335-684070ac6a8e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160209T212501Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,22 +1,20 @@
 ﻿
 using Sitecore.Analytics.Model.Framework;
+using Sitecore.Controls;
 using Sitecore.Diagnostics;
 using Sitecore.Forms.Core.Data.Helpers;
-using Sitecore.Forms.Shell.UI.Dialogs;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Web.UI.WebControls;
-
-using System.Linq;
-using System.Web.UI.HtmlControls;
 using Sitecore.Web;
 using Sitecore.Web.UI.Sheer;
 using Sitecore.Web.UI.XamlSharp.Xaml;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
 
 namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
-{    
-    public class ContactFacetDialog : EditorBase
+{
+    public class ContactFacetDialog : DialogPage
     {
 
         protected TreeView myTreeView;
@@ -25,32 +23,21 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
         protected override void OnInit(EventArgs e)
         {
             this.MappedFields.Value = WebUtil.GetQueryString("spk");
-            base.OnInit(e);
-        }
-        protected override void SaveValues()
-        {
-            this.MappedFields.Value = myTreeView.SelectedValue;
-        }
-
-
-
-        protected override void OK_Click()
-        {
-            this.SaveValues();
-            XamlControl.AjaxScriptManager.SetDialogValue(this.MappedFields.Value);
-            SheerResponse.CloseWindow();
-        }
-
-
-
-        protected override void Localize()
-        {
             this.Header = WebUtil.GetQueryString("ti");
             this.Text = WebUtil.GetQueryString("txt");
+            base.OnInit(e);
         }
-
-
-
+      
+        protected override void OK_Click()
+        {
+            this.MappedFields.Value = myTreeView.SelectedValue;
+            XamlControl.AjaxScriptManager.SetDialogValue(this.MappedFields.Value);            
+            SheerResponse.CloseWindow();
+        }
+        protected override void Cancel_Click()
+        {
+            base.Cancel_Click();
+        }
         protected override void OnLoad(EventArgs e)
         {
             Assert.ArgumentNotNull(e, "e");
@@ -61,7 +48,7 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
             {
                 myTreeView.Nodes.Clear();
 
-                Dictionary<string, IFacet> cf = ContactFacetsHelper.FacetFactory.ContactFacets;
+                Dictionary<string, IFacet> cf = ContactFacetsHelper.FacetFactory.ContactFacets;           
                 foreach (KeyValuePair<string, IFacet> f in cf)
                 {
                     myTreeView.Nodes.Add(GetTreeNode(f.Key, f.Value, f.Key));
@@ -77,10 +64,7 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
         }
 
         /// <summary>
-        /// Type: Sitecore.Forms.Core.Data.Helpers.ContactFacetsHelper
-        /// Assembly: Sitecore.Forms.Core, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
-        /// Type: Sitecore.WFFM.Analytics.ContactFacetFactory
-        /// Assembly: Sitecore.WFFM.Analytics, Version=8.1.0.0, Culture=neutral, PublicKeyToken=null
+        /// Retrieves the differnt facet members to be placed into TreeNode objects for disaply
         /// </summary>
         /// <param name="name"></param>
         /// <param name="f"></param>
@@ -116,9 +100,7 @@ namespace TheCodeAttic.SharedSource.WFFM.PopulateFieldAction.Sheer
                         if (!(type == (Type)null))
                             tn.ChildNodes.Add(GetTreeNode("Entries", ContactFacetsHelper.FacetFactory.CreateElement(type), string.Format("{0}/{1}", path, "Entries")));
                     }
-
                 }
-
             }
             return tn;
         }

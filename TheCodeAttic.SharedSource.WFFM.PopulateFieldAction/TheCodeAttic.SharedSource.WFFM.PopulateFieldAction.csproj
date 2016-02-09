@@ -101,8 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactFacetMarco.cs" />
-    <Compile Include="GetContactFacetValue.cs" />
+    <Compile Include="Conditions\ContactFacetExist.cs" />
+    <Compile Include="RuleMacros\ContactFacetMarco.cs" />
+    <Compile Include="Actions\GetContactFacetValue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sitecore modules\Shell\TheCodeAttic\ContactFacetDialog.xaml.xml.cs" />
   </ItemGroup>
@@ -111,6 +112,7 @@
     <Content Include="sitecore modules\Shell\TheCodeAttic\ContactFacetDialog.xaml.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="sitecore modules\Shell\TheCodeAttic\XMLFile1.xml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
