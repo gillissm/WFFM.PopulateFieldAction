@@ -1,7 +1,14 @@
 # WFFM.PopulateFieldAction
 Source code to support custom Sitecore Web Forms for Marketers (WFFM) actions, rule macro, and conditions allowing the content editor to leverage data collected in xProfiles.
 
-These custom item requires a minimum version of Sitecore 8 update 6 OR Sitecore 8 update 1 to properly work, due to large shifts in WFFM libraries that are used.
+Be aware due to some WFFM class changes this module is limited to Sitecore 8.0 Update 6 and above or Sitecore 8.1 Update 1 and above and their corresponding WFFM installs.
+
+This module adds three items to enhance the usage of Web Forms for Marketers (WFFM).
+    1.There is a custom Rule Macro, that loads a picker list to select a contact facet field (xProfile property) for use in any rule or action.
+    2.A new WFFM field action, that populates the value of the field from a selected contact facet via the Rule Macro.
+    3.Finally, you get a new WFFM rule, which will hide a WFFM field if the selected contact facet field already contains a value, because it is silly to ask a user to fill in the same information multiple times.
+
+As a bonus, there is a WFFM form that uses all three of the above for you to see how it works.
 
 Project includes TDS support and Sitecore package for installation.
 
